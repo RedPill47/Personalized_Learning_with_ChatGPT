@@ -17,10 +17,23 @@ Follow these instructions to set up and run the project on your local machine.
 
     ```sh
     git clone https://github.com/RedPill47/Personalized_Learning_with_ChatGPT.git
+    ```
+    ```sh
     cd Personalized_Learning_with_ChatGPT
     ```
 
-2. **Backend Setup:**
+2. **Setup Environment Variables:**
+
+    - Rename the `.env-example` file to `.env`.
+    - Open the `.env` file and add your API keys for OpenAI, Serper, and Browserless:
+
+    ```
+    OPENAI_API_KEY=your_openai_api_key
+    SERPER_API_KEY=your_serper_api_key
+    BROWSERLESS_API_KEY=your_browserless_api_key
+    ```
+
+3. **Backend Setup:**
 
     Open a terminal and run the following commands:
 
@@ -28,7 +41,11 @@ Follow these instructions to set up and run the project on your local machine.
 
     ```sh
     env\Scripts\activate
+    ```
+    ```sh
     cd backend
+    ```
+    ```sh
     python manage.py runserver
     ```
 
@@ -36,7 +53,11 @@ Follow these instructions to set up and run the project on your local machine.
 
     ```sh
     source env/bin/activate
+    ```
+    ```sh
     cd backend
+    ```
+    ```sh
     python manage.py runserver
     ```
 
@@ -46,7 +67,11 @@ Follow these instructions to set up and run the project on your local machine.
 
     ```sh
     cd frontend
+    ```
+    ```sh
     npm install
+    ```
+    ```sh
     npm start
     ```
 
