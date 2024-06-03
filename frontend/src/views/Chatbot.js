@@ -111,17 +111,17 @@ const Chatbot = () => {
                     )}
                     {isProvidingFeedback && !selectedAgent && (
                         <>
-                            <p>Please select the agent you want to communicate with:</p>
-                            <button onClick={() => selectAgent('practical_tutor')}>Practical Tutor</button>
-                            <button onClick={() => selectAgent('learning_path_tutor')}>Learning Path Tutor</button>
+                            <p>Please select the option you want to proceed with:</p>
+                            <button onClick={() => selectAgent('practical_tutor')}>Quiz</button>
+                            <button onClick={() => selectAgent('learning_path_tutor')}>Course</button>
                             {/* Add more agents as needed */}
                         </>
                     )}
                     {isProvidingFeedback && selectedAgent === 'practical_tutor' && !taskType && (
                         <>
-                            <p>Please select the task type:</p>
-                            <button onClick={() => selectTaskType('create_exercise')}>Create Exercise</button>
-                            <button onClick={() => selectTaskType('correct_exercise')}>Correct Exercise</button>
+                            <p>Please select an action:</p>
+                            <button onClick={() => selectTaskType('create_exercise')}>Edit Quiz</button>
+                            <button onClick={() => selectTaskType('correct_exercise')}>Get Feedback</button>
                         </>
                     )}
                     {(isAskingQuestion || (isProvidingFeedback && selectedAgent && (selectedAgent !== 'practical_tutor' || taskType))) && (
