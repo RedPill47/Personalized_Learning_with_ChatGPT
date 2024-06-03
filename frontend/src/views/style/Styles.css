@@ -1,0 +1,127 @@
+/* Import the other CSS files */
+@import url('Base.css');
+@import url('Header.css');
+@import url('Sidebar.css');
+@import url('Quiz.css');
+@import url('Chatbot.css');
+
+.main-content {
+    flex-grow: 1;
+    background-color: #2e2e2e;
+    padding: 20px;
+    overflow-y: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body.light-mode .main-content {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Styles for the create section */
+.create-section {
+    background-color: #3e3e3e;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    flex-grow: 1;
+}
+
+body.light-mode .create-section {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+.create-section h2 {
+    margin-top: 0;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #666;
+    margin-bottom: 20px;
+}
+
+.tabs .tablinks {
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tabs .tablinks.active {
+    border-bottom: 2px solid #673ab7;
+    font-weight: bold;
+}
+
+.tabcontent {
+    display: none;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+.upload-area {
+    border: 2px dashed #666;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+body.light-mode .upload-area {
+    border: 2px dashed #999;
+}
+
+.upload-area input[type="file"] {
+    display: none;
+}
+
+.upload-area label {
+    cursor: pointer;
+    color: #888;
+}
+
+body.light-mode .upload-area label {
+    color: #666;
+}
+
+textarea {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #666;
+    background-color: #2e2e2e;
+    color: #fff;
+}
+
+body.light-mode textarea {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+.char-counter {
+    text-align: right;
+    font-size: 12px;
+    color: #888;
+}
+
+#startMagic {
+    background-color: #673ab7;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+body.light-mode #startMagic {
+    background-color: #673ab7;
+    color: #fff;
+}

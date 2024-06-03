@@ -1,0 +1,146 @@
+.chatbot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #673ab7;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chatbot-button img {
+    width: 25px;
+    height: 25px;
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 350px;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Hidden by default */
+    flex-direction: column;
+}
+
+.chatbot-header {
+    background-color: #673ab7;
+    color: #fff;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbot-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.chatbot-header button {
+    background-color: #5c2a91;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-window {
+    padding: 15px;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.message {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.bot-message {
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.user-message {
+    background-color: #673ab7;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    align-self: flex-end;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #444;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #444;
+    color: #fff;
+}
+
+.chat-input button {
+    background-color: #673ab7;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-input img {
+    width: 20px;
+    height: 20px;
+}
+
+body.light-mode .chatbot-container {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+body.light-mode .chatbot-header {
+    background-color: #673ab7;
+    color: #fff;
+}
+
+body.light-mode .chat-window {
+    background-color: #fff;
+}
+
+body.light-mode .bot-message {
+    background-color: #ccc;
+    color: #000;
+}
+
+body.light-mode .user-message {
+    background-color: #673ab7;
+    color: #fff;
+}
+
+body.light-mode .chat-input {
+    border-top: 1px solid #ccc;
+}
+
+body.light-mode .chat-input input {
+    background-color: #ddd;
+    color: #000;
+}

@@ -1,0 +1,110 @@
+/* Base styles for the body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+/* Container for the authentication card */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styles for the authentication card */
+.auth-card {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Header styles */
+.auth-card h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+/* Paragraph styles */
+.auth-card p {
+    margin-bottom: 30px;
+    color: #bbbbbb;
+}
+
+/* Styles for input groups */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Label styles */
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #bbbbbb;
+}
+
+/* Input styles */
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #2e2e2e;
+    color: #ffffff;
+}
+
+/* Checkbox styles */
+.input-group .checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-group .checkbox-group input[type="checkbox"] {
+    margin-right: 200px;
+}
+
+/* Button styles */
+.auth-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #673ab7;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.auth-button:hover {
+    background-color: #5c2a91;
+}
+
+/* Footer styles */
+.auth-footer {
+    margin-top: 20px;
+    color: #bbbbbb;
+}
+
+.auth-footer a {
+    color: #673ab7;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}

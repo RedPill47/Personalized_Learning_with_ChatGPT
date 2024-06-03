@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: #fff;
+    background-color: #2e2e2e;
+    transition: background-color 0.3s, color 0.3s;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body.light-mode {
+    background-color: #f0f0f0;
+    color: #000;
+}

@@ -1,0 +1,41 @@
+.sidebar {
+    width: 250px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+body.light-mode .sidebar {
+    background-color: #ddd;
+    color: #000;
+}
+
+.sidebar h1 {
+    color: #fff;
+}
+
+body.light-mode .sidebar h1 {
+    color: #000;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+body.light-mode .sidebar ul li a {
+    color: #000;
+}

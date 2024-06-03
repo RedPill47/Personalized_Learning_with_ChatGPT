@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: langchain-tools
+Version: 0.1.34
+Summary: Simplifying, enhancing, and extending the LangChain library functionality
+Home-page: https://github.com/MartinChen1973/langchain-tools
+Author: LangChain Tools Team
+Author-email: cheny@cheny.com
+Keywords: language processing,AI,natural language understanding,LangChain,LLM
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: langchain
+Requires-Dist: langchain-community
+Requires-Dist: langchain-openai
+
+# LangChain Tools
+
+Welcome to LangChain Tools, a Python library designed to simplify, enhance, and extend the functionality of the LangChain library. This set of tools aims to improve interaction with various language models and provide a richer, more flexible experience for developers working in natural language processing.
+
+## Installation
+
+To install LangChain Tools, simply run the following command:
+
+```bash
+pip install langchain-tools
+```

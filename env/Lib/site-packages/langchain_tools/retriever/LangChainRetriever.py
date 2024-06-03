@@ -1,0 +1,131 @@
+import os
+from langchain_openai.embeddings import OpenAIEmbeddings
+from langchain_community.vectorstores import DocArrayInMemorySearch
+from langchain_core.runnables import RunnableParallel, RunnablePassthrough
+from langchain_tools.retriever.md.split_md import parse_markdown
+from langchain_community.document_loaders import WebBaseLoader
+from langchain_community.vectorstores import FAISS
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+
+class LangChainRetriever:
+    """
+    A retriever class for creating search indexes from markdown files or web content.
+
+    This class provides functionality to create retrievers that can search through
+    content indexed from markdown files or fetched from URLs. It also supports creating
+    runnable objects from markdown files which can be used to execute search queries
+    in parallel with additional processing.
+    """
+
+    K = 8
+
+    @staticmethod
+    def _get_embedding(embedding):
+        """Return the provided embedding or create a new one if none is provided."""
+        return OpenAIEmbeddings() if embedding is None else embedding
+
+    @staticmethod
+    def _create_vectorstore_from_texts(texts, embedding):
+        """Create a vector store from given texts using the specified embedding."""
+        return DocArrayInMemorySearch.from_texts(texts, embedding=embedding)
+
+    @staticmethod
+    def create_retriever_from_path(path, k=K, embedding=None):
+        """
+        Create a retriever from a markdown file or all markdown files in a folder.
+
+        Parameters:
+            path (str): Path to the markdown file or folder containing markdown files.
+            embedding (OpenAIEmbeddings, optional): Embedding model to use for text vectorization.
+
+        Returns:
+            A retriever object capable of searching the indexed text.
+
+        Raises:
+            Exception: If the path does not exist or if it's a directory with no markdown files.
+        """
+        embedding = LangChainRetriever._get_embedding(embedding)
+
+        if os.path.isfile(path) and path.endswith(".md"):
+            file_paths = [path]
+        elif os.path.isdir(path):
+            file_paths = [
+                os.path.join(path, f) for f in os.listdir(path) if f.endswith(".md")
+            ]
+            if not file_paths:
+                raise Exception("No markdown files found in the directory.")
+        else:
+            raise Exception("Provided path is not a markdown file or directory.")
+
+        sections = []
+        for file_path in file_paths:
+            sections.extend(parse_markdown(file_path))
+
+        vectorstore = LangChainRetriever._create_vectorstore_from_texts(
+            sections, embedding
+        )
+        return vectorstore.as_retriever(search_type="mmr", search_kwargs={"k": k})
+
+    @staticmethod
+    def create_question_and_context_from_path(path, k=K, embedding=None):
+        """
+        Create a Runnable object from a markdown file or all markdown files in a folder
+        which facilitates parallel execution of search queries against the indexed text
+        along with additional processing.
+
+        Parameters:
+            path (str): Path to the markdown file or folder containing markdown files.
+            embedding (OpenAIEmbeddings, optional): Embedding model to use for text vectorization.
+
+        Returns:
+            A RunnableParallel object configured with the retriever and a passthrough for questions.
+        """
+        retriever = LangChainRetriever.create_retriever_from_path(path, k, embedding)
+        return RunnableParallel(
+            {"context": retriever, "question": RunnablePassthrough()}
+        )
+
+    @staticmethod
+    def create_retriever_from_url(url: str, k=K, embedding=None):
+        """
+        Create a retriever from web content at the specified URL.
+
+        Parameters:
+            url (str): The URL from which to load the content.
+
+        Returns:
+            A retriever object capable of searching the indexed web content.
+        """
+        loader = WebBaseLoader(url)
+        docs = loader.load()
+        if embedding is None:
+            embeddings = OpenAIEmbeddings()
+        text_splitter = RecursiveCharacterTextSplitter()
+        documents = text_splitter.split_documents(docs)
+        vector = FAISS.from_documents(documents, embeddings)
+        retriever = vector.as_retriever(search_type="mmr", search_kwargs={"k": k})
+        return retriever
+
+    @staticmethod
+    def create_question_and_context_from_url(url, k=K, embedding=None):
+        """
+        Create a Runnable object from web content at a specified URL which facilitates parallel execution
+        of search queries against the indexed text along with additional processing.
+
+        This method fetches content from the given URL and creates a retriever from this content. It then
+        wraps this retriever into a RunnableParallel object. This allows for executing search queries in
+        parallel, combining the search context with additional passthrough operations.
+
+        Parameters:
+            url (str): The URL from which to fetch content.
+            embedding (OpenAIEmbeddings, optional): Embedding model to use for text vectorization.
+
+        Returns:
+            A RunnableParallel object configured with the retriever and a passthrough for questions.
+        """
+        retriever = LangChainRetriever.create_retriever_from_url(url, k, embedding)
+        questionAndContext = RunnableParallel(
+            {"context": retriever, "question": RunnablePassthrough()}
+        )
+        return questionAndContext

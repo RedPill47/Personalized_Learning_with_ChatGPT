@@ -1,0 +1,84 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #333;
+    padding: 10px;
+    color: #fff;
+}
+
+body.light-mode .header {
+    background-color: #ddd;
+    color: #000;
+}
+
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.profile-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #673ab7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #444;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+body.light-mode .dropdown-content {
+    background-color: #ddd;
+    color: #000;
+}
+
+.dropdown-content p, .dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+body.light-mode .dropdown-content p, 
+body.light-mode .dropdown-content a {
+    color: #000;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+body.light-mode .dropdown-content a:hover {
+    background-color: #ccc;
+}
+
+.profile-container:hover .dropdown-content {
+    display: block;
+}

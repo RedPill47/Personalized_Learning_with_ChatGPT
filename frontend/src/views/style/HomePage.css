@@ -1,0 +1,74 @@
+/* Styles for the home page */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    color: #ffffff;
+    text-align: center;
+    width: 10000px;
+}
+
+.home-header {
+    margin-bottom: 40px;
+}
+
+.home-header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.home-header p {
+    font-size: 18px;
+    color: #bbbbbb;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-presentation {
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.home-presentation h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.home-presentation p {
+    font-size: 16px;
+    color: #bbbbbb;
+}
+
+.home-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.home-button {
+    background-color: #673ab7;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+body.light-mode .home-button {
+    background-color: #5c2a91;
+}
+
+.home-button:hover {
+    background-color: #5c2a91;
+}
+
+body.light-mode .home-button:hover {
+    background-color: #4a2378;
+}

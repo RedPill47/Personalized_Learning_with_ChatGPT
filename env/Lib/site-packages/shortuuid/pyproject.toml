@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "shortuuid"
+version = "1.0.13"
+description = "A generator library for concise, unambiguous and URL-safe UUIDs."
+license = "BSD-3-Clause"
+classifiers = [
+  "License :: OSI Approved :: BSD License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.6",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
+homepage = "https://github.com/skorokithakis/shortuuid/"
+authors = ["Stavros Korokithakis <hi@stavros.io>"]
+readme = "README.md"
+include = [
+  { path = "COPYING", format = "sdist" }
+]
+
+[tool.poetry.scripts]
+shortuuid = "shortuuid.cli:cli"
+
+[tool.poetry.dependencies]
+python = ">=3.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

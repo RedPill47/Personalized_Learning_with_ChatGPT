@@ -1,0 +1,12 @@
+from langchain_core import BaseMessage
+from typing import List
+
+
+class LangGraphRouter:
+    @staticmethod
+    def conditional_router(state: List[BaseMessage], end_value: str = "__end__") -> str:
+        tool_calls = state[-1].additional_kwargs.get("tool_calls", [])
+        if len(tool_calls):
+            tool_to_call = tool_calls[-1].get("function", {}).get("name")
+            return tool_to_call
+        return end_value
