@@ -27,6 +27,7 @@ Follow these instructions to set up and run the project on your local machine.
     - Rename the `.env-example` file to `.env`.
     - Open the `.env` file and add your API keys for OpenAI, Serper, and Browserless:
 
+
     ```
     OPENAI_API_KEY=your_openai_api_key
     SERPER_API_KEY=your_serper_api_key
