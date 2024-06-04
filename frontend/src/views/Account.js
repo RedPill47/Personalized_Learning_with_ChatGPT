@@ -130,7 +130,7 @@ const Account = () => {
                 >
                   <option value="">Select Class</option>
                   <option value="highschool">High School</option>
-                  <option value="uni">University</option>
+                  <option value="university">University</option>
                 </select>
               </div>
               <div className="input-group">
