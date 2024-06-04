@@ -135,7 +135,7 @@ function Step2({ learningclass, setLearningclass, learninglevel, setLearningleve
         <select id="class" name="class" value={learningclass} onChange={handleChange}>
           <option value="">Select Class</option>
           <option value="highschool">High School</option>
-          <option value="uni">University</option>
+          <option value="university">University</option>
         </select>
       </div>
       <div className="input-group">
