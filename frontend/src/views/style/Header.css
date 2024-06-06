@@ -43,6 +43,7 @@ body.light-mode .header {
 .dropdown-content {
     display: none;
     position: absolute;
+    top: 100%;
     right: 0;
     background-color: #444;
     min-width: 160px;
