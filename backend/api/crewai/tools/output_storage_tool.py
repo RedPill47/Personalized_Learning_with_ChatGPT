@@ -55,7 +55,6 @@ def compile_latex(file_path: str, output_file: str) -> str:
             for file in [tex_filename, log_filename, os.path.join('output_files', "compiled_materials.aux"), 
                          os.path.join('output_files', "compiled_materials.toc"), 
                          os.path.join('output_files', "compiled_materials.out"), 
-                         os.path.join('output_files', "compiled_materials.log"), 
                          os.path.join('output_files', "compiled_materials.tex")]:
                 if os.path.exists(file):
                     os.remove(file)
