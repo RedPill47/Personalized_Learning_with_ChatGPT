@@ -18,7 +18,7 @@ const Chatbot = () => {
     const [isProvidingFeedback, setIsProvidingFeedback] = useState(false);
     const [selectedAgent, setSelectedAgent] = useState(null);
     const [taskType, setTaskType] = useState(null);
-    const [isAskingQuestion, setIsAskingQuestion] = useState(false); // New state for "Ask a Question"
+    const [isAskingQuestion, setIsAskingQuestion] = useState(false);
 
     const lessonId = localStorage.getItem('lessonId');  // Retrieve the lessonId from local storage
 
