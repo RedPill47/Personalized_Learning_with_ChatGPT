@@ -1,4 +1,3 @@
-# api/crewai/crew_setup.py
 from api.crewai.agents import TutorAgents
 from api.crewai.tasks import TeachingTasks
 from crewai import Crew
