@@ -10,6 +10,7 @@ Follow these instructions to set up and run the project on your local machine.
 
 - Python
 - Node.js and npm
+- MikTeX
 
 ### Installation
 
