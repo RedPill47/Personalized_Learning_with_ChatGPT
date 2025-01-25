@@ -91,6 +91,23 @@ Open your web browser and navigate to `http://localhost:3000/` to access the app
 - Use flashcards for efficient learning
 - Chatbot for interactive learning assistance
 
+## Screenshots
+
+### Homepage
+![Homepage](media/Homepage.png)
+
+### Chatbot Interface
+![Chatbot Interface](media/Chatbot%20interface%20(ask%20question).png)
+
+### Create Page with Upload File Field
+![Create Page](media/Create%20page%20with%20upload%20file%20field.png)
+
+### Flashcards Page
+![Flashcards Page](media/Flashcards%20page%20with%20content.png)
+
+### Quiz Page
+![Quiz Page](media/Quiz%20page%20with%20content.png)
+
 ## Contributing
 
 Feel free to fork the project, make improvements, and submit pull requests.
