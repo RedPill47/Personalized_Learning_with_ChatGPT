@@ -2,6 +2,10 @@
 
 Tutor AI is a web application designed to enhance learning experiences by providing personalized educational content, quizzes, and flashcards.
 
+## Documentation
+- [Demo Video](https://youtu.be/QLQW1j-7UkA)
+- [Report](Report.pdf)
+
 ## Getting Started
 
 Follow these instructions to set up and run the project on your local machine.
